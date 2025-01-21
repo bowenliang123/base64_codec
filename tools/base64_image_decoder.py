@@ -12,19 +12,18 @@ class Base64ImageDecodeTool(Tool):
         if not encoded_text:
             raise ValueError("Invalid input encoded_text")
 
+        mime_types_to_prefix = {
+            "image/png": "data:image/png;base64,",
+            "image/jpeg": "data:image/jpeg;base64,",
+            "image/webp": "data:image/webp;base64,",
+            "image/svg+xml": "data:image/svg+xml;base64,"
+        }
         target_mime_type = "image/png"
-        if encoded_text.startswith("data:image/jpeg;base64,"):
-            target_mime_type = "image/jpeg"
-            encoded_text = encoded_text.replace("data:image/jpeg;base64,", "")
-        elif encoded_text.startswith("data:image/png;base64,"):
-            target_mime_type = "image/png"
-            encoded_text = encoded_text.replace("data:image/png;base64,", "")
-        elif encoded_text.startswith("data:image/webp;base64,"):
-            target_mime_type = "image/webp"
-            encoded_text = encoded_text.replace("data:image/webp;base64,", "")
-        elif encoded_text.startswith("data:image/svg+xml;base64,"):
-            target_mime_type = "image/svg+xml"
-            encoded_text = encoded_text.replace("data:image/svg+xml;base64,", "")
+        for mime_type, prefix in mime_types_to_prefix.items():
+            if encoded_text.startswith(prefix):
+                target_mime_type = mime_type
+                encoded_text = encoded_text.replace(prefix, "")
+                break
 
         try:
             result_file_bytes = base64.decodebytes(encoded_text.encode())

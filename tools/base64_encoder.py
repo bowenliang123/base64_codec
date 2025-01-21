@@ -12,5 +12,5 @@ class Base64TextEncodeTool(Tool):
         if not plain_text:
             raise ValueError("Invalid input plain_text")
 
-        encoded_str:str = base64.b64encode(plain_text.encode("utf-8")).decode("utf-8")
+        encoded_str: str = base64.b64encode(plain_text.encode("utf-8")).decode("utf-8")
         yield self.create_text_message(encoded_str)
