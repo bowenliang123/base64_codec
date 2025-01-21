@@ -1,0 +1,26 @@
+identity:
+  name: base64_encoder
+  author: bowenliang123
+  label:
+    en_US: Base64 Encoder
+    zh_Hans: Base64 编码
+description:
+  human:
+    en_US: A tool to encode text to Base64-encoded string
+    zh_Hans: 将文本编码为 Base64 编码的字符串的工具
+  llm: A tool to encode text to Base64-encoded string
+parameters:
+  - name: plain_text
+    type: string
+    required: true
+    label:
+      en_US: Raw Text
+      zh_Hans: 原始文本
+    human_description:
+      en_US: Text to encode
+      zh_Hans: 原始文本
+    llm_description: A tool for encoding text to Base64-encoded string
+    form: llm
+extra:
+  python:
+    source: tools/base64_encoder.py

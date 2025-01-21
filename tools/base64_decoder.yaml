@@ -1,0 +1,26 @@
+identity:
+  name: base64_decoder
+  author: bowenliang123
+  label:
+    en_US: Base64 Decoder
+    zh_Hans: Base64 解码
+description:
+  human:
+    en_US: A tool to decode Base64-encoded text
+    zh_Hans: 解码 Base64 编码的文本的工具
+  llm: A tool to decode Base64-encoded text
+parameters:
+  - name: encoded_text
+    type: string
+    required: true
+    label:
+      en_US: Base64 encoded Text
+      zh_Hans: 已 Base64 编码的文本
+    human_description:
+      en_US: Base64-encoded text
+      zh_Hans: Base64 编码的文本
+    llm_description: A tool for decoding Base64-encoded text to plain text
+    form: llm
+extra:
+  python:
+    source: tools/base64_decoder.py
