@@ -20,7 +20,7 @@ parameters:
       en_US: Base64-encoded text
       zh_Hans: Base64 编码的文本
     llm_description: A tool for decoding Base64-encoded text to plain text
-    form: form
+    form: llm
 extra:
   python:
     source: tools/base64_decoder.py
