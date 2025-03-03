@@ -20,7 +20,7 @@ parameters:
       en_US: Text to encode
       zh_Hans: 原始文本
     llm_description: A tool for encoding text to Base64-encoded string
-    form: llm
+    form: form
 extra:
   python:
     source: tools/base64_encoder.py

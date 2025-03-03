@@ -4,6 +4,7 @@ identity:
   label:
     en_US: Base64 Codec
     zh_Hans: Base64 编解码器
+    ja_JP: Base64 コーデック
   description:
     en_US: A tool for encoding and decoding Base64
     zh_Hans: A tool for encoding and decoding Base64

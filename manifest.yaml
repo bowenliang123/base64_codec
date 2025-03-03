@@ -4,9 +4,8 @@ author: bowenliang123
 name: base64_codec
 label:
   en_US: Base64 Codec
-  ja_JP: Base64 コーデック
   zh_Hans: Base64 编解码器
-  pt_BR: Base64 Codec
+  ja_JP: Base64 コーデック
 description:
   en_US: A tool for encoding and decoding Base64
   ja_JP: Base64のエンコードとデコードのためのツール
