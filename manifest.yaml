@@ -1,4 +1,4 @@
-version: 0.0.2
+version: 0.0.3
 type: plugin
 author: bowenliang123
 name: base64_codec
@@ -7,10 +7,9 @@ label:
   zh_Hans: Base64 编解码器
   ja_JP: Base64 コーデック
 description:
-  en_US: A tool for encoding and decoding Base64
+  en_US: Encoding and decoding Base64 with text or image file as output
   ja_JP: Base64のエンコードとデコードのためのツール
-  zh_Hans: 一个用于编码和解码Base64的工具
-  pt_BR: Uma ferramenta para codificação e decodificação de Base64
+  zh_Hans: Base64编码及解码，支持生成文本和图片文件
 icon: icon.svg
 resource:
   memory: 268435456
