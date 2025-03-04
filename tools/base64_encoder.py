@@ -13,5 +13,14 @@ class Base64TextEncodeTool(Tool):
             yield self.create_text_message("")
             return
 
-        encoded_str: str = base64.b64encode(plain_text.encode("utf-8")).decode("utf-8")
+        urlsafe_enabled: bool = ("true" == tool_parameters.get("urlsafe_enabled", "").lower())
+        encoded_str: str = ""
+        try:
+            if urlsafe_enabled:
+                encoded_str = base64.urlsafe_b64encode(plain_text.encode("utf-8")).decode("utf-8")
+            else:
+                encoded_str = base64.b64encode(plain_text.encode("utf-8")).decode("utf-8")
+        except Exception as e:
+            raise ValueError("Failed to encode text input, Exception: " + str(e))
+
         yield self.create_text_message(encoded_str)
