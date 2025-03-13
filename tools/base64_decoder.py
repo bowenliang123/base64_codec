@@ -1,9 +1,10 @@
-import base64
 from collections.abc import Generator
 from typing import Any
 
 from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
+
+from tools.utils.base64_utils import decode_from_base64
 
 
 class Base64TextDecodeTool(Tool):
@@ -13,13 +14,9 @@ class Base64TextDecodeTool(Tool):
             yield self.create_text_message("")
             return
 
-        urlsafe_enabled: bool = ("true" == tool_parameters.get("urlsafe_enabled", "").lower())
-        decoded_str: str = ""
+        urlsafe_enabled = bool("true" == tool_parameters.get("urlsafe_enabled", "").lower())
         try:
-            if urlsafe_enabled:
-                decoded_str: str = base64.urlsafe_b64decode(encoded_text.encode("utf-8")).decode("utf-8")
-            else:
-                decoded_str: str = base64.b64decode(encoded_text.encode("utf-8")).decode("utf-8")
+            decoded_str = decode_from_base64(encoded_text, urlsafe_enabled)
         except Exception as e:
             raise ValueError("Failed to decode Base64 text input, Exception: " + str(e))
 
