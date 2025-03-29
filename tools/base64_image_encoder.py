@@ -6,6 +6,8 @@ from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
 from dify_plugin.file.file import File
 
+from tools.utils.image_prefix_utils import MIME_TYPE_TO_PREFIX
+
 
 class Base64ImageEncodeTool(Tool):
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
@@ -16,15 +18,8 @@ class Base64ImageEncodeTool(Tool):
 
         try:
             encoded_str = base64.b64encode(input_image_bytes).decode("utf-8")
-
-            mime_types_to_prefix = {
-                "image/png": "data:image/png;base64,",
-                "image/jpeg": "data:image/jpeg;base64,",
-                "image/webp": "data:image/webp;base64,",
-                "image/svg+xml": "data:image/svg+xml;base64,"
-            }
-            prefix = mime_types_to_prefix.get(input_image.mime_type, "data:image/png;base64,")
-            result_str = f"{prefix}{encoded_str}"
+            prefix = MIME_TYPE_TO_PREFIX.get(input_image.mime_type, "data:image/png;base64,")
+            result_str = f"{prefix},{encoded_str}"
         except Exception as e:
             raise RuntimeError(f"Failed to encode image to Base64 encoded text, error: {str(e)}")
 
