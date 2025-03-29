@@ -8,20 +8,25 @@ as output.
 
 ### Description
 
-| Tool                 | Input                                                                                                    | Output                |
-|----------------------|----------------------------------------------------------------------------------------------------------|-----------------------|
-| base64_encoder       | Raw text                                                                                                 | Base64 encoded string |
-| base64_decoder       | Base64 encoded string                                                                                    | Raw text              |
-| base64_image_decoder | Base64 encoded string of PNG, JPG, WEBP, SVG format, starting with prefixes, eg. `data:image/png;base64` | Image file            |
+| Tool                 | Input                                                    | Output                |
+|----------------------|----------------------------------------------------------|-----------------------|
+| base64_encoder       | Raw text                                                 | Base64 encoded string |
+| base64_decoder       | Base64 encoded text                                      | Raw text              |
+| base64_image_encoder | Image file                                               | Base64 encoded text   |
+| base64_image_decoder | Base64 encoded text of PNG, JPG, WEBP, SVG format prefix | Image file            |
 
 - base64_encoder
 
-  <img src="./_assets/snapshot1.png" width="100%" >
+  ![](_assets/snapshot1.png)
 
 - base64_decoder
 
-  <img src="./_assets/snapshot2.png" width="100%" >
+  ![](_assets/snapshot2.png)
+
+- base64_image_encoder
+   
+  ![](_assets/snapshot4.png)
 
 - base64_image_decoder
 
-  <img src="./_assets/snapshot3.png" width="100%" >
+  ![](_assets/snapshot3.png)
