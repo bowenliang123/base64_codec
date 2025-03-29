@@ -2,9 +2,7 @@
 
 Author: [bowenliang123](https://github.com/bowenliang123)
 
-This plugin provides tools for encoding and decoding Base64 specified
-in [RFC 4648](https://datatracker.ietf.org/doc/html/rfc4648.html). It supports text as input, while text or image files
-as output.
+This plugin provides tools for encoding and decoding Base64 specified in [RFC 4648](https://datatracker.ietf.org/doc/html/rfc4648.html). It supports text and image files for the input or  output.
 
 ## Description
 
