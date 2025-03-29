@@ -14,11 +14,13 @@ class Base64ImageDecodeTool(Tool):
         if not encoded_text:
             raise ValueError("Invalid input encoded_text")
 
-        image_mime_type = "image/png"
-        if "," in encoded_text:
-            prefix = encoded_text[:encoded_text.index(",")]
+        try:
+            comma_index = encoded_text.index(",")
+            prefix = encoded_text[:comma_index]
+            encoded_text = encoded_text[comma_index:]
             image_mime_type = extract_mime_type(prefix)
-            encoded_text = encoded_text[encoded_text.index(","):]
+        except ValueError:  # ValueError when comma is not found
+            image_mime_type = "image/png"
 
         try:
             result_file_bytes = base64.decodebytes(encoded_text.encode())
