@@ -5,7 +5,7 @@ from typing import Any
 from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
 
-from tools.utils.image_prefix_utils import PREFIX_TO_MIME_TYPE
+from tools.utils.image_prefix_utils import extract_mime_type
 
 
 class Base64ImageDecodeTool(Tool):
@@ -17,9 +17,7 @@ class Base64ImageDecodeTool(Tool):
         image_mime_type = "image/png"
         if "," in encoded_text:
             prefix = encoded_text[:encoded_text.index(",")]
-            image_mime_type = PREFIX_TO_MIME_TYPE.get(prefix)
-            if not image_mime_type:
-                raise ValueError(f"Invalid image prefix in encoded_text: {prefix}")
+            image_mime_type = extract_mime_type(prefix)
             encoded_text = encoded_text[encoded_text.index(","):]
 
         try:
