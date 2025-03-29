@@ -1,7 +1,7 @@
 import base64
 from functools import lru_cache
 
-LRU_CACHE_SIZE = 128
+LRU_CACHE_SIZE = 256
 
 
 @lru_cache(maxsize=LRU_CACHE_SIZE)
