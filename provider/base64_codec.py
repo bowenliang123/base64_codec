@@ -6,6 +6,7 @@ from dify_plugin.errors.tool import ToolProviderCredentialValidationError
 from tools.base64_decoder import Base64TextDecodeTool
 from tools.base64_encoder import Base64TextEncodeTool
 from tools.base64_image_decoder import Base64ImageDecodeTool
+from tools.base64_image_encoder import Base64ImageEncodeTool
 
 
 class Base64CodecProvider(ToolProvider):
@@ -16,6 +17,7 @@ class Base64CodecProvider(ToolProvider):
             """
             Base64TextEncodeTool.from_credentials({})
             Base64TextDecodeTool.from_credentials({})
+            Base64ImageEncodeTool.from_credentials({})
             Base64ImageDecodeTool.from_credentials({})
         except Exception as e:
             raise ToolProviderCredentialValidationError(str(e))
