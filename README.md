@@ -1,8 +1,12 @@
 # Base64 Codec - Encode and Decode Base64
 
-Author: [bowenliang123](https://github.com/bowenliang123)
+**Author:** [bowenliang123](https://github.com/bowenliang123)
 
-This plugin provides tools for encoding and decoding Base64 specified in [RFC 4648](https://datatracker.ietf.org/doc/html/rfc4648.html). It supports text and image files for the input or  output.
+**Github Repository:** https://github.com/bowenliang123/base64_codec
+
+**Dify Marketplace:** https://marketplace.dify.ai/plugins/bowenliang123/base64_codec
+
+This Dify plugin provides tools for encoding and decoding Base64 specified in [RFC 4648](https://datatracker.ietf.org/doc/html/rfc4648.html). It supports text and image files for the input or output.
 
 ## Description
 
