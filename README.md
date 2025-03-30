@@ -6,7 +6,9 @@
 
 **Dify Marketplace:** https://marketplace.dify.ai/plugins/bowenliang123/base64_codec
 
-This Dify plugin provides tools for encoding and decoding Base64 specified in [RFC 4648](https://datatracker.ietf.org/doc/html/rfc4648.html). It supports text and image files for the input or output.
+This Dify plugin provides tools for encoding and decoding Base64 specified in [RFC 4648](https://datatracker.ietf.org/doc/html/rfc4648.html).
+It supports text and image files for the input or output.
+URL safe Base64 encoding is also supported for text encoding and decoding.
 
 ## Description
 
@@ -34,6 +36,17 @@ This Dify plugin provides tools for encoding and decoding Base64 specified in [R
 - Base64 Encoded text → Image file
 
   ![](_assets/snapshot3.png)
+
+## Changelog
+
+- 0.1.0
+  - Introduce `base64_image_encoder` for encoding image file to Base64 encoded text
+
+- 0.0.3
+  - Support URL safe Base64 encoding and decoding
+  
+- 0.0.1
+  - Initial release for text encoding and decoding and image decoding from Base64 encoded text
 
 ## License
 
