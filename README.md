@@ -40,7 +40,7 @@ URL safe Base64 encoding is also supported for text encoding and decoding.
 ## Changelog
 
 - 0.1.0
-  - Introduce `base64_image_encoder` for encoding image file to Base64 encoded text
+  - Add `base64_image_encoder` for encoding image file to Base64 encoded text
 
 - 0.0.3
   - Support URL safe Base64 encoding and decoding
