@@ -3,10 +3,10 @@ from typing import Any
 from dify_plugin import ToolProvider
 from dify_plugin.errors.tool import ToolProviderCredentialValidationError
 
-from tools.base64_decoder import Base64TextDecodeTool
-from tools.base64_encoder import Base64TextEncodeTool
-from tools.base64_image_decoder import Base64ImageDecodeTool
-from tools.base64_image_encoder import Base64ImageEncodeTool
+from tools.base64_decoder.base64_decoder import Base64TextDecodeTool
+from tools.base64_encoder.base64_encoder import Base64TextEncodeTool
+from tools.base64_image_decoder.base64_image_decoder import Base64ImageDecodeTool
+from tools.base64_image_encoder.base64_image_encoder import Base64ImageEncodeTool
 
 
 class Base64CodecProvider(ToolProvider):

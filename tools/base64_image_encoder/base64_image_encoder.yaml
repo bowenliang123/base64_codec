@@ -23,4 +23,4 @@ parameters:
     form: llm
 extra:
   python:
-    source: tools/base64_image_encoder.py
+    source: tools/base64_image_encoder/base64_image_encoder.py

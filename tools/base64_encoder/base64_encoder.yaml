@@ -1,25 +1,25 @@
 identity:
-  name: base64_decoder
+  name: base64_encoder
   author: bowenliang123
   label:
-    en_US: Base64 Decoder
-    zh_Hans: Base64 解码
+    en_US: Base64 Encoder
+    zh_Hans: Base64 编码
 description:
   human:
-    en_US: A tool to decode Base64-encoded text
-    zh_Hans: 解码 Base64 编码的文本的工具
-  llm: A tool to decode Base64-encoded text
+    en_US: A tool to encode text to Base64-encoded string
+    zh_Hans: 将文本编码为 Base64 编码的字符串的工具
+  llm: A tool to encode text to Base64-encoded string
 parameters:
-  - name: encoded_text
+  - name: plain_text
     type: string
     required: true
     label:
-      en_US: Base64 encoded Text
-      zh_Hans: 已 Base64 编码的文本
+      en_US: Raw Text
+      zh_Hans: 原始文本
     human_description:
-      en_US: Base64-encoded text
-      zh_Hans: Base64 编码的文本
-    llm_description: A tool for decoding Base64-encoded text to plain text
+      en_US: Text to encode
+      zh_Hans: 原始文本
+    llm_description: Text to encode
     form: llm
   - name: urlsafe_enabled
     type: select
@@ -44,4 +44,4 @@ parameters:
     form: form
 extra:
   python:
-    source: tools/base64_decoder.py
+    source: tools/base64_encoder/base64_encoder.py
