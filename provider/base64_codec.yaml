@@ -9,7 +9,7 @@ identity:
     en_US: Encoding and decoding Base64 with text or image file as output
     ja_JP: Base64のエンコードとデコードのためのツール
     zh_Hans: Base64编码及解码，支持生成文本和图片文件
-  icon: icon.svg
+  icon: icon.png
 tools:
   - tools/base64_encoder/base64_encoder.yaml
   - tools/base64_decoder/base64_decoder.yaml
