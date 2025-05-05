@@ -19,6 +19,7 @@ URL safe Base64 encoding is also supported for text encoding and decoding.
 | base64_image_encoder | Image file                                               | Base64 encoded text |
 | base64_image_decoder | Base64 encoded text of PNG, JPG, WEBP, SVG format prefix | Image file          |
 | base64_file_encoder  | Binary file                                              | Base64 encoded text |
+| base64_file_decoder  | Base64 encoded text                                      | Binary file         |
 
 ## Tools and Usage
 
@@ -44,6 +45,7 @@ URL safe Base64 encoding is also supported for text encoding and decoding.
 
 - 0.3.0:
   - Support customize the output file name in `base64_image_decoder` tool
+  - Add `base64_file_decoder` for decoding Base64 encoded text to binary file
 
 - 0.2.0
     - Add `base64_file_encoder` for encoding binary file to Base64 encoded text
