@@ -8,7 +8,7 @@ from dify_plugin.entities.tool import ToolInvokeMessage
 from tools.utils.image_prefix_utils import extract_mime_type
 
 
-class Base64ImageDecodeTool(Tool):
+class Base64ImageDecoderTool(Tool):
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
         encoded_text: str = tool_parameters.get("encoded_text")
         output_filename: str = tool_parameters.get("output_filename")

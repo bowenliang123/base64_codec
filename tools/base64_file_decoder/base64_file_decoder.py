@@ -9,7 +9,7 @@ from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
 
 
-class Base64FileDecodeTool(Tool):
+class Base64FileDecoderTool(Tool):
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
         encoded_text: str = tool_parameters.get("encoded_text")
         output_filename: str = tool_parameters.get("output_filename")

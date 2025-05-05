@@ -9,7 +9,7 @@ from dify_plugin.file.file import File
 from tools.utils.image_prefix_utils import wrap_mime_text_with_prefix
 
 
-class Base64ImageEncodeTool(Tool):
+class Base64ImageEncoderTool(Tool):
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
         input_image: File = tool_parameters.get("input_image")
         if not input_image or not isinstance(input_image, File):

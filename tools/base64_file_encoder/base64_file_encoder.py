@@ -7,7 +7,7 @@ from dify_plugin.entities.tool import ToolInvokeMessage
 from dify_plugin.file.file import File
 
 
-class Base64FileEncodeTool(Tool):
+class Base64FileEncoderTool(Tool):
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
         input_file: File = tool_parameters.get("input_file")
         if not input_file or not isinstance(input_file, File):

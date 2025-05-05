@@ -7,7 +7,7 @@ from dify_plugin.entities.tool import ToolInvokeMessage
 from tools.utils.base64_utils import decode_from_base64
 
 
-class Base64TextDecodeTool(Tool):
+class Base64TextDecoderTool(Tool):
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
         encoded_text: str = tool_parameters.get("encoded_text")
         if not encoded_text:
