@@ -11,6 +11,7 @@ from tools.utils.image_prefix_utils import extract_mime_type
 class Base64ImageDecodeTool(Tool):
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
         encoded_text: str = tool_parameters.get("encoded_text")
+        output_filename: str = tool_parameters.get("output_filename")
         if not encoded_text:
             raise ValueError("Invalid input encoded_text")
 
@@ -29,4 +30,8 @@ class Base64ImageDecodeTool(Tool):
 
         yield self.create_blob_message(
             blob=result_file_bytes,
-            meta={"mime_type": image_mime_type})
+            meta={
+                "mime_type": image_mime_type,
+                "filename": output_filename,
+            },
+        )

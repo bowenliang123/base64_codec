@@ -42,6 +42,9 @@ URL safe Base64 encoding is also supported for text encoding and decoding.
 
 ## Changelog
 
+- 0.3.0:
+  - Support customize the output file name in `base64_image_decoder` tool
+
 - 0.2.0
     - Add `base64_file_encoder` for encoding binary file to Base64 encoded text
 

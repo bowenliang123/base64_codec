@@ -21,6 +21,16 @@ parameters:
       zh_Hans: Base64 编码的图片字符串，默认转为PNG格式，支持PNG格式（data:image/png;base64开头）及JPG格式（data:image/jpeg;base64开头）
     llm_description: A tool for decoding Base64-encoded text to image file
     form: llm
+  - name: output_filename
+    type: string
+    required: false
+    label:
+      en_US: Filename of the output file
+      zh_Hans: 输出文件名
+    human_description:
+      en_US: Filename of the output file
+      zh_Hans: 输出文件名
+    form: llm
 extra:
   python:
     source: tools/base64_image_decoder/base64_image_decoder.py
