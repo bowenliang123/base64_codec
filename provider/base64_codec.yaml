@@ -2,13 +2,12 @@ identity:
   author: bowenliang123
   name: base64_codec
   label:
-    en_US: Base64 Codec
-    zh_Hans: Base64 编解码器
-    ja_JP: Base64 コーデック
+    en_US: Base64
+    zh_Hans: Base64 编码解码
   description:
-    en_US: Encoding and decoding Base64 with text or image file as output
-    ja_JP: Base64のエンコードとデコードのためのツール
-    zh_Hans: Base64编码及解码，支持生成文本和图片文件
+    en_US: Base64 conversion from / to Base64 text with plain text, binary files, image files
+    zh_Hans: Base64 编码解码，支持纯文本、二进制文件、图片文件与Base64文本的互相转换
+    ja_JP: Base64 テキスト、バイナリファイル、画像ファイルとの相互変換のための Base64
   icon: icon.png
 tools:
   - tools/base64_encoder/base64_encoder.yaml
