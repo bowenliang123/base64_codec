@@ -6,9 +6,9 @@ identity:
     zh_Hans: Base64 文本 转 图片
 description:
   human:
-    en_US: Decode Base64-encoded text to a binary file
-    zh_Hans: 将 Base64 编码文本转为 二进制文件
-  llm: Decode Base64-encoded text to a binary file
+    en_US: Decode Base64-encoded text to an image file
+    zh_Hans: 将 Base64 编码文本转为 图片文件
+  llm: Decode Base64-encoded text to an image file
 parameters:
   - name: encoded_text
     type: string
