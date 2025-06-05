@@ -2,13 +2,13 @@ identity:
   name: base64_image_decoder
   author: bowenliang123
   label:
-    en_US: Base64 Image Decoder
-    zh_Hans: Base64 转图片
+    en_US: Base64 Text to Image
+    zh_Hans: Base64 文本 转 图片
 description:
   human:
-    en_US: A tool for decoding Base64-encoded text to image file
-    zh_Hans: 解码 Base64 编码文本为图片的工具
-  llm: A tool for decoding Base64-encoded text to image file
+    en_US: Decode Base64-encoded text to a binary file
+    zh_Hans: 将 Base64 编码文本转为 二进制文件
+  llm: Decode Base64-encoded text to a binary file
 parameters:
   - name: encoded_text
     type: string
