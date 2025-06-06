@@ -1,25 +1,25 @@
 identity:
-  name: base64_to_hex
+  name: hex_to_base64
   author: bowenliang123
   label:
-    en_US: Base64 to Hex
-    zh_Hans: Base64 转 十六进制
+    en_US: Hex to Base64
+    zh_Hans: 十六进制 转 Base64
 description:
   human:
-    en_US: Convert Base64 text to Hex text
-    zh_Hans: 转换Base64文本为十六进制文本
-  llm: Convert Base64 text to Hex text
+    en_US: Convert Hex text to Base64 text
+    zh_Hans: 转换十六进制文本为Base64文本
+  llm: Convert Hex text to Base64 text
 parameters:
-  - name: encoded_text
+  - name: hext_text
     type: string
     required: true
     label:
-      en_US: Base64 encoded Text
-      zh_Hans: 已 Base64 编码的文本
+      en_US: Hex Text
+      zh_Hans: 十六进制文本
     human_description:
-      en_US: Base64-encoded text
-      zh_Hans: Base64 编码的文本
-    llm_description: A tool for decoding Base64-encoded text to plain text
+      en_US: A string of hexadecimal numbers
+      zh_Hans: 十六进制文本
+    llm_description: Hex Text
     form: llm
   - name: urlsafe_enabled
     type: select
@@ -44,4 +44,4 @@ parameters:
     form: form
 extra:
   python:
-    source: tools/base64_to_hex/base64_to_hex.py
+    source: tools/hex_to_base64/hex_to_base64.py
