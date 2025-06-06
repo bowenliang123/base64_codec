@@ -9,6 +9,7 @@ from tools.base64_file_decoder.base64_file_decoder import Base64FileDecoderTool
 from tools.base64_file_encoder.base64_file_encoder import Base64FileEncoderTool
 from tools.base64_image_decoder.base64_image_decoder import Base64ImageDecoderTool
 from tools.base64_image_encoder.base64_image_encoder import Base64ImageEncoderTool
+from tools.base64_to_hex.base64_to_hex import Base64ToHexTool
 
 
 class Base64CodecProvider(ToolProvider):
@@ -23,5 +24,7 @@ class Base64CodecProvider(ToolProvider):
             Base64ImageDecoderTool.from_credentials({})
             Base64FileEncoderTool.from_credentials({})
             Base64FileDecoderTool.from_credentials({})
+            Base64ToHexTool.from_credentials({})
+            # HexToBase64Tool.from_credentials({})
         except Exception as e:
             raise ToolProviderCredentialValidationError(str(e))

@@ -16,6 +16,7 @@ tools:
   - tools/base64_file_decoder/base64_file_decoder.yaml
   - tools/base64_image_encoder/base64_image_encoder.yaml
   - tools/base64_image_decoder/base64_image_decoder.yaml
+  - tools/base64_to_hex/base64_to_hex.yaml
 extra:
   python:
     source: provider/base64_codec.py

@@ -10,10 +10,15 @@ def encode_to_base64(plain_text: str, urlsafe_enabled: bool) -> str:
     return base64_encoded_bytes.decode("utf-8")
 
 
-def decode_from_base64(encoded_text: str, urlsafe_enabled: bool) -> str:
+def decode_base64_to_str(encoded_text: str, urlsafe_enabled: bool) -> str:
+    decoded_bytes = decode_base64_to_bytes(encoded_text, urlsafe_enabled)
+    return decoded_bytes.decode("utf-8")
+
+
+def decode_base64_to_bytes(encoded_text: str, urlsafe_enabled: bool) -> bytes:
     encoded_text_bytes = encoded_text.encode("utf-8")
     if urlsafe_enabled:
         decoded_bytes = base64.urlsafe_b64decode(encoded_text_bytes)
     else:
         decoded_bytes = base64.b64decode(encoded_text_bytes)
-    return decoded_bytes.decode("utf-8")
+    return decoded_bytes
