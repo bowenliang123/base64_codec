@@ -10,7 +10,7 @@ description:
     zh_Hans: 转换十六进制文本为Base64文本
   llm: Convert Hex text to Base64 text
 parameters:
-  - name: hext_text
+  - name: hex_text
     type: string
     required: true
     label:
