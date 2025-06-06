@@ -6,9 +6,9 @@ identity:
     zh_Hans: Base64 转 十六进制
 description:
   human:
-    en_US: Convert Base64 text to Hex text
+    en_US: Convert Base64 text to Hexadecimal text
     zh_Hans: 转换Base64文本为十六进制文本
-  llm: Convert Base64 text to Hex text
+  llm: Convert Base64 text to Hexadecimal text
 parameters:
   - name: encoded_text
     type: string
