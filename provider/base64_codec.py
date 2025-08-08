@@ -19,13 +19,16 @@ class Base64CodecProvider(ToolProvider):
             """
             IMPLEMENT YOUR VALIDATION HERE
             """
-            Base64TextEncoderTool.from_credentials({})
-            Base64TextDecoderTool.from_credentials({})
-            Base64ImageEncoderTool.from_credentials({})
-            Base64ImageDecoderTool.from_credentials({})
-            Base64FileEncoderTool.from_credentials({})
-            Base64FileDecoderTool.from_credentials({})
-            Base64ToHexTool.from_credentials({})
-            HexToBase64Tool.from_credentials({})
+            for tool_cls in [
+                Base64TextEncoderTool,
+                Base64TextDecoderTool,
+                Base64ImageEncoderTool,
+                Base64ImageDecoderTool,
+                Base64FileEncoderTool,
+                Base64FileDecoderTool,
+                Base64ToHexTool,
+                HexToBase64Tool,
+            ]:
+                tool_cls.from_credentials({})
         except Exception as e:
             raise ToolProviderCredentialValidationError(str(e))
