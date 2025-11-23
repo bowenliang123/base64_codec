@@ -11,20 +11,20 @@ import filetype
 from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
 
+from tools.utils.string_utils import normalize_splitter
+
 
 class Base64FileDecoderTool(Tool):
 
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
         encoded_text: str = tool_parameters.get("encoded_text", "")
         output_filename_str: str = tool_parameters.get("output_filename", str(uuid.uuid4()) + ".bin")
-        splitter_str: str = tool_parameters.get("splitter_str", '\n\n').strip() or '\n\n'
+        splitter_str: str = normalize_splitter(tool_parameters.get("splitter_str", '\n\n').strip() or '\n\n')
         if not encoded_text:
             raise ValueError("Empty input encoded_text")
 
         pool_executor: ThreadPoolExecutor = None
         try:
-            # normalize splitter
-            splitter_str = splitter_str.replace('\\n', '\n')
             splitted = [s for s in encoded_text.split(splitter_str) if s]
             output_filenames = [s for s in output_filename_str.split("\n") if s]
             pool_executor = ThreadPoolExecutor(max_workers=min(len(splitted), multiprocessing.cpu_count()))
