@@ -14,8 +14,9 @@ from tools.utils.string_utils import normalize_splitter, DEFAULT_SPLITTER
 class Base64ImageDecoderTool(Tool):
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
         encoded_text: str = tool_parameters.get("encoded_text")
-        output_filename_str: str = tool_parameters.get("output_filename","")
-        splitter_str: str = normalize_splitter(tool_parameters.get("splitter_str", DEFAULT_SPLITTER).strip() or DEFAULT_SPLITTER)
+        output_filename_str: str = tool_parameters.get("output_filename", "")
+        splitter_str: str = normalize_splitter(
+            tool_parameters.get("splitter_str", DEFAULT_SPLITTER).strip() or DEFAULT_SPLITTER)
         if not encoded_text:
             raise ValueError("Invalid input encoded_text")
 
@@ -29,7 +30,7 @@ class Base64ImageDecoderTool(Tool):
                     i: executor.submit(
                         self.decode,
                         splitted[i],
-                        output_filenames[i] if i < len(output_filenames) else f"output_{i + 1}.bin",
+                        output_filenames[i] if i < len(output_filenames) else None,
                     )
                     for i, encoded_text in enumerate(splitted)
                 }
@@ -41,7 +42,7 @@ class Base64ImageDecoderTool(Tool):
             if pool_executor:
                 pool_executor.shutdown(wait=False, cancel_futures=True)
 
-    def decode(self, encoded_text: str, output_filename: str) -> tuple[dict[str, Any], bytes]:
+    def decode(self, encoded_text: str, output_filename: Optional[str]) -> tuple[dict[str, Any], bytes]:
         try:
             try:
                 comma_index = encoded_text.index(",")

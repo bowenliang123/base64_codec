@@ -34,7 +34,7 @@ class Base64FileDecoderTool(Tool):
                     i: executor.submit(
                         self.decode,
                         splitted[i],
-                        output_filenames[i] if i < len(output_filenames) else f"output_{i + 1}.bin",
+                        output_filenames[i] if i < len(output_filenames) else None,
                     )
                     for i, encoded_text in enumerate(splitted)
                 }
@@ -46,7 +46,7 @@ class Base64FileDecoderTool(Tool):
             if pool_executor:
                 pool_executor.shutdown(wait=False, cancel_futures=True)
 
-    def decode(self, encoded_text: str, output_filename: str) -> tuple[dict[str, Any], bytes]:
+    def decode(self, encoded_text: str, output_filename: Optional[str]) -> tuple[dict[str, Any], bytes]:
         try:
             result_file_bytes = base64.decodebytes(encoded_text.encode())
             filetype_type: Optional[filetype.Type] = None
@@ -60,7 +60,7 @@ class Base64FileDecoderTool(Tool):
 
                 # ensure the output filename has the correct extension
                 extension = filetype_type.extension
-                if not output_filename.endswith(f".{extension}"):
+                if output_filename and not output_filename.endswith(f".{extension}"):
                     output_filename = f"{output_filename}.{extension}"
             else:
                 mime_type = self.get_mime_type(output_filename)
