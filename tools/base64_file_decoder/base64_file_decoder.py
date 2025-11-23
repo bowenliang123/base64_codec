@@ -46,6 +46,12 @@ class Base64FileDecoderTool(Tool):
 
     def decode(self, encoded_text: str, output_filename: Optional[str]) -> tuple[dict[str, Any], bytes]:
         try:
+            try:
+                # compatibility with Base64 encoded text with "data:image/png;base64," prefix
+                encoded_text = encoded_text[encoded_text.index(","):]
+            except ValueError:  # ValueError when comma is not found
+                pass
+
             result_file_bytes = base64.decodebytes(encoded_text.encode())
             filetype_type: Optional[filetype.Type] = None
             with NamedTemporaryFile(delete=True) as temp_file:
