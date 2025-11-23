@@ -31,6 +31,18 @@ parameters:
       en_US: Filename of the output file
       zh_Hans: 输出文件名
     form: llm
+  - name: splitter_str
+    type: string
+    required: true
+    default: "\n\n"
+    label:
+      en_US: Delimiter
+      zh_Hans: 分隔符
+    human_description:
+      en_US: Support multiple segments of Base64 encoded text, split by the delimiter and decode them into multiple files sequentially
+      zh_Hans: 支持多段Base64编码文本，按分隔符拆分后依次解码为多个文件
+    llm_description: A tool for decoding Base64-encoded text to file file
+    form: llm
 extra:
   python:
     source: tools/base64_file_decoder/base64_file_decoder.py
