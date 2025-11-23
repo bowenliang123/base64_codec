@@ -32,7 +32,7 @@ class Base64FileDecoderTool(Tool):
                 futures = {
                     i: executor.submit(
                         self.decode,
-                        encoded_text,
+                        splitted[i],
                         output_filenames[i] if i < len(output_filenames) else f"output_{i + 1}.bin",
                     )
                     for i, encoded_text in enumerate(splitted)
