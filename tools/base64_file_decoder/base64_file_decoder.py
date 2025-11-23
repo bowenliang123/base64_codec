@@ -28,7 +28,7 @@ class Base64FileDecoderTool(Tool):
         try:
             splitted = [s for s in encoded_text.split(splitter_str) if s]
             output_filenames = [s for s in output_filename_str.split("\n") if s]
-            pool_executor = ThreadPoolExecutor(max_workers=min(len(splitted), multiprocessing.cpu_count()))
+            pool_executor = ThreadPoolExecutor()
             with pool_executor as executor:
                 futures = {
                     i: executor.submit(
