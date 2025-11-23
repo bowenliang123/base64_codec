@@ -2,8 +2,8 @@ identity:
   name: base64_file_encoder
   author: bowenliang123
   label:
-    en_US: File -> Base64
-    zh_Hans: 文件 -> Base64
+    en_US: File ⮕ Base64
+    zh_Hans: 文件 ⮕ Base64
 description:
   human:
     en_US: Encode the binary file to Base64-encoded text

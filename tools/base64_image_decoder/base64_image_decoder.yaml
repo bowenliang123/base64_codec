@@ -2,8 +2,8 @@ identity:
   name: base64_image_decoder
   author: bowenliang123
   label:
-    en_US: Base64 -> Image File(s)
-    zh_Hans: Base64 -> 图片文件
+    en_US: Base64 ⮕ Image File(s)
+    zh_Hans: Base64 ⮕ 图片文件
 description:
   human:
     en_US: Decode Base64-encoded text to an image file

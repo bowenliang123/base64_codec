@@ -2,8 +2,8 @@ identity:
   name: hex_to_base64
   author: bowenliang123
   label:
-    en_US: Hex -> Base64
-    zh_Hans: 十六进制 -> Base64
+    en_US: Hex ⮕ Base64
+    zh_Hans: 十六进制 ⮕ Base64
 description:
   human:
     en_US: Convert Hexadecimal text to Base64 text

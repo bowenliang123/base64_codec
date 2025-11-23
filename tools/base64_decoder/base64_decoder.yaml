@@ -2,8 +2,8 @@ identity:
   name: base64_decoder
   author: bowenliang123
   label:
-    en_US: Base64 -> Text
-    zh_Hans: Base64 -> 文本
+    en_US: Base64 ⮕ Text
+    zh_Hans: Base64 ⮕ 文本
 description:
   human:
     en_US: A tool to decode Base64-encoded text
