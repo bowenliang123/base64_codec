@@ -26,14 +26,15 @@ class Base64FileDecoderTool(Tool):
             # normalize splitter
             splitter = splitter.replace('\\n', '\n')
             splitted = [s for s in encoded_text.split(splitter) if s]
-            print(f"splitted: {splitted}")
             output_filenames = [s for s in output_filename_str.split("\n") if s]
             pool_executor = ThreadPoolExecutor(max_workers=min(len(splitted), multiprocessing.cpu_count()))
             with pool_executor as executor:
                 futures = {
-                    i: executor.submit(self.decode,
-                                       encoded_text,
-                                       output_filenames[i] if i < len(output_filenames) else f"output_{i + 1}.bin")
+                    i: executor.submit(
+                        self.decode,
+                        encoded_text,
+                        output_filenames[i] if i < len(output_filenames) else f"output_{i + 1}.bin",
+                    )
                     for i, encoded_text in enumerate(splitted)
                 }
                 for i in sorted(futures.keys()):
