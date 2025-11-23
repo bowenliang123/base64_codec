@@ -18,7 +18,7 @@ class Base64FileDecoderTool(Tool):
 
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
         encoded_text: str = tool_parameters.get("encoded_text", "")
-        output_filename_str: str = tool_parameters.get("output_filename", str(uuid.uuid4()) + ".bin")
+        output_filename_str: str = tool_parameters.get("output_filename", "")
         splitter_str: str = normalize_splitter(
             tool_parameters.get("splitter_str", DEFAULT_SPLITTER).strip() or DEFAULT_SPLITTER)
         if not encoded_text:

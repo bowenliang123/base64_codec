@@ -2,7 +2,7 @@ import base64
 import multiprocessing
 from collections.abc import Generator
 from concurrent.futures import ThreadPoolExecutor
-from typing import Any
+from typing import Any, Optional
 
 from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
