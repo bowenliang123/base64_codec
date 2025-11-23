@@ -1,3 +1,6 @@
+DEFAULT_SPLITTER = "\n\n"
+
+
 def normalize_splitter(splitter_str: str) -> str:
     """
     Normalizes the splitter string by replacing escaped newline characters with actual newline characters.

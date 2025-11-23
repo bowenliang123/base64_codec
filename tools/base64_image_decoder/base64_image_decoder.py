@@ -8,14 +8,14 @@ from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
 
 from tools.utils.image_prefix_utils import extract_mime_type
-from tools.utils.string_utils import normalize_splitter
+from tools.utils.string_utils import normalize_splitter, DEFAULT_SPLITTER
 
 
 class Base64ImageDecoderTool(Tool):
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
         encoded_text: str = tool_parameters.get("encoded_text")
         output_filename_str: str = tool_parameters.get("output_filename","")
-        splitter_str: str = normalize_splitter(tool_parameters.get("splitter_str", '\n\n').strip() or '\n\n')
+        splitter_str: str = normalize_splitter(tool_parameters.get("splitter_str", DEFAULT_SPLITTER).strip() or DEFAULT_SPLITTER)
         if not encoded_text:
             raise ValueError("Invalid input encoded_text")
 

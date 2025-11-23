@@ -11,7 +11,7 @@ import filetype
 from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
 
-from tools.utils.string_utils import normalize_splitter
+from tools.utils.string_utils import normalize_splitter, DEFAULT_SPLITTER
 
 
 class Base64FileDecoderTool(Tool):
@@ -19,7 +19,8 @@ class Base64FileDecoderTool(Tool):
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
         encoded_text: str = tool_parameters.get("encoded_text", "")
         output_filename_str: str = tool_parameters.get("output_filename", str(uuid.uuid4()) + ".bin")
-        splitter_str: str = normalize_splitter(tool_parameters.get("splitter_str", '\n\n').strip() or '\n\n')
+        splitter_str: str = normalize_splitter(
+            tool_parameters.get("splitter_str", DEFAULT_SPLITTER).strip() or DEFAULT_SPLITTER)
         if not encoded_text:
             raise ValueError("Empty input encoded_text")
 
