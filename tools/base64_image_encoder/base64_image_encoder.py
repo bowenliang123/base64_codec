@@ -7,6 +7,7 @@ from dify_plugin.entities.tool import ToolInvokeMessage
 from dify_plugin.file.file import File
 
 from tools.utils.image_prefix_utils import wrap_mime_text_with_prefix
+from tools.utils.tool_utils import send_text_in_chunks
 
 
 class Base64ImageEncoderTool(Tool):
@@ -23,4 +24,4 @@ class Base64ImageEncoderTool(Tool):
         except Exception as e:
             raise RuntimeError(f"Failed to encode image to Base64 encoded text, error: {str(e)}")
 
-        yield self.create_text_message(result_str)
+        return send_text_in_chunks(self, text=result_str)

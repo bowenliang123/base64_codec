@@ -6,6 +6,8 @@ from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
 from dify_plugin.file.file import File
 
+from tools.utils.tool_utils import send_text_in_chunks
+
 
 class Base64FileEncoderTool(Tool):
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
@@ -19,4 +21,4 @@ class Base64FileEncoderTool(Tool):
         except Exception as e:
             raise RuntimeError(f"Failed to encode file to Base64 encoded text, error: {str(e)}")
 
-        yield self.create_text_message(result_str)
+        return send_text_in_chunks(self, text=result_str)

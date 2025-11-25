@@ -5,6 +5,7 @@ from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
 
 from tools.utils.base64_utils import encode_bytes_to_base64
+from tools.utils.tool_utils import send_text_in_chunks
 
 
 class HexToBase64Tool(Tool):
@@ -24,8 +25,8 @@ class HexToBase64Tool(Tool):
 
         urlsafe_enabled = bool("true" == tool_parameters.get("urlsafe_enabled", "").lower())
         try:
-            result_base_str = encode_bytes_to_base64(hex_bytes, urlsafe_enabled)
+            result_str = encode_bytes_to_base64(hex_bytes, urlsafe_enabled)
         except Exception as e:
             raise ValueError("Failed to encode text input, Exception: " + str(e))
 
-        yield self.create_text_message(result_base_str)
+        return send_text_in_chunks(self, text=result_str)

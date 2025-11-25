@@ -45,6 +45,9 @@ URL safe Base64 encoding is also supported for text encoding and decoding.
 
 ## Changelog
 
+- 1.0.0
+  - Streaming output in Base64 encoder with in chunk size of 512 chars by default
+
 - 0.5.0
   - Support multiple files generation in `base64_image_decoder` and `base64_file_decoder` tools with custom seperator in Base64 encoded text input.
 
