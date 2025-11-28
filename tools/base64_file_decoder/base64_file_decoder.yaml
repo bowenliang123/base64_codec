@@ -15,21 +15,21 @@ parameters:
     required: true
     label:
       en_US: Base64 encoded Text
-      zh_Hans: 已 Base64 编码的文件字符串
-    human_description:
-      en_US: Base64 encoded file string
       zh_Hans: Base64 编码的文件字符串
+    human_description:
+      en_US: Base64 encoded text of the file(s), multiple output files are supported when using the delimiter
+      zh_Hans: Base64 编码的文件字符串, 支持使用分隔符分割多个文件
     llm_description: A tool for decoding Base64-encoded text to file file
     form: llm
   - name: output_filename
     type: string
     required: false
     label:
-      en_US: Filename of the output file
+      en_US: Output file name(s)
       zh_Hans: 输出文件名
     human_description:
-      en_US: Filename of the output file
-      zh_Hans: 输出文件名
+      en_US: Optional output filename(s), one per line.
+      zh_Hans: 每行一个，非必填。
     form: llm
   - name: splitter_str
     type: string
