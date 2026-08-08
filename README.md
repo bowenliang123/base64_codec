@@ -45,6 +45,10 @@ URL safe Base64 encoding is also supported for text encoding and decoding.
 
 ## Changelog
 
+- 1.1.0
+  - Upgrade dify-plugin SDK to 0.10.1
+  - Update Python download URL to use the latest version
+
 - 1.0.0
   - Streaming output in Base64 encoder with in chunk size of 512 chars by default
 
